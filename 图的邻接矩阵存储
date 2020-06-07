@@ -186,6 +186,7 @@ void PrintUDG(const Graph& g) {
 		}
 		cout << endl;
 	}
+	cout<<endl;
 }//输出邻接矩阵
 
 void PrintDian(Graph g) {
@@ -207,7 +208,9 @@ int main() {
 	CreateUDG(g);      //创建邻接矩阵 
 	PrintDian(g);	   //打印各邻接点 
 	PrintUDG(g);       //打印邻接矩阵 
+	cout << "深度优先搜索: ";
 	DFSTraverse(g);    //深度优先搜索 
+	cout << "广度优先搜索: "; 
 	BFSTraverse(g,0);  //广度优先搜索 
 	DestroyUDG(g);     //销毁图 
 	return 0;
