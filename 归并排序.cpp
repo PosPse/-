@@ -70,6 +70,6 @@ int main() {
 	L.r=new RedType[MAXSIZE+1];
 	L.length=0;
 	ScanfSqList(L);                                 //创建顺序表
-	MergeSort(L);                                    //堆排序
+	MergeSort(L);                                    //归并排序
 	show(L);                                        //排序结果
 }
