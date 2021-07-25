@@ -74,6 +74,25 @@ void LevelOrderTraverse(BiTree T) {
     }
 }
 
+//计算二叉树深度
+int Depth(BiTree T) {
+    int m, n;
+    if(T == NULL)
+        return 0;
+    else {
+        m = Depth(T->lchild);
+        n = Depth(T->rchild);
+        return (m>n)?(m+1):(n+1);
+    }
+}
+
+//计算二叉树的结点总数
+int NodeCount(BiTree T) {
+    if(T == NULL)
+        return 0;
+    else return NodeCount(T->lchild) + NodeCount(T->rchild) + 1;
+}
+
 //销毁二叉树
 void DestroyBiTree(BiTree &T) {
     if(T) {
@@ -85,6 +104,8 @@ void DestroyBiTree(BiTree &T) {
 
 int main()
 {
+    //测试样例
+    //a#b#cdef#####
     BiTree T;
     CreateBiTree(T);
     cout << "先序遍历：";
@@ -95,6 +116,8 @@ int main()
     PostOrderTraverse(T);
     cout << "\n层次遍历：";
     LevelOrderTraverse(T);
+    cout << "\n二叉树的深度为：" << Depth(T);
+    cout << "\n二叉树的结点总数为：" << NodeCount(T);
     DestroyBiTree(T);
     return 0;
 }
