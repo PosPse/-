@@ -10,7 +10,7 @@ void InitArray(int *arr, int length) {
     }
 }
 
-//冒泡排序
+//选择排序
 void SelectionSort(int *arr, int length) {
     for(int i=0; i<length; i++) {
         int minIndex = i;
